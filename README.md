@@ -52,3 +52,41 @@ We welcome contributions, research papers, and case studies focused on sustainab
 ## 📜 License
 
 Distributed under the MIT License. See `LICENSE` for more information.
+from codecarbon import EmissionsTracker
+
+# Initialize the tracker to measure carbon emissions during model training
+tracker = EmissionsTracker(
+    project_name="sustainable_llm_fine_tuning",
+    measure_power_secs=15,
+    output_dir="./green_metrics"
+)
+
+tracker.start()
+
+try:
+    # --- Your AI Training / Inference Code Here ---
+    print("Training model sustainably...")
+    # model.train()
+finally:
+    emissions = tracker.stop()
+    print(f"Total carbon emissions: {emissions} kg CO2eq")
+    apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: ai-inference-scaler
+  namespace: ai-production
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: llm-inference-service
+  minReplicaCount: 0 # Scales down to 0 to save energy when idle
+  maxReplicaCount: 10
+  cooldownPeriod: 300
+  triggers:
+  - type: prometheus
+    metadata:
+      serverAddress: http://prometheus-k8s.monitoring.svc.cluster.local:9090
+      metricName: http_requests_total
+      threshold: '50'
+    
