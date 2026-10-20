@@ -73,3 +73,54 @@ This repository provides a foundational governance and regulatory framework temp
 ## 🏛️ Framework Overview
 
 As artificial intelligence systems scale globally, fragmented regulations create compliance hurdles and safety gaps. This framework establishes a unified blueprint for governments, enterprises, and open-source communities to implement safe, transparent, and accountable AI lifecycle management.
+
+## 📊 Market Opportunity (TAM, SAM, SOM & Definitions)
+
+For enterprises, investors, and startups building AI compliance, governance, and risk management (GRC) software based on this framework, the market scope and definitions are structured as follows:
+
+### 1. Total Addressable Market (TAM)
+* **Definition:** The total revenue opportunity available in a market if 100% market share is achieved for a specific product or service. 
+* **Scope for AI GRC:** Estimated at **$35B+**, representing the entire global market for Artificial Intelligence Governance, Risk, and Compliance (GRC) software, security auditing, and regulatory technology.
+
+### 2. Serviceable Addressable Market (SAM)
+* **Definition:** The segment of the TAM targeted by a company's products and services which is within the geographic reach and target buyer profile.
+* **Scope for AI GRC:** Estimated at **$8.5B**, representing medium-to-large enterprises, government contractors, and high-stakes AI developers (finance, healthcare, defense, enterprise tech) that actively require automated risk classification and compliance tooling.
+
+### 3. Serviceable Obtainable Market (SOM)
+* **Definition:** The portion of the SAM that can realistically be captured in the near-to-medium term, factoring in competition, resources, and go-to-market strategy.
+* **Scope for AI GRC:** Estimated at **$450M**, targeting early adopters, cloud-native enterprises, and fast-growing AI-first startups in North America and Europe over a 1–3 year horizon needing out-of-the-box compliance checklists and red-teaming integration.
+
+---
+
+## ⚙️ Core Modules
+
+### 1. Risk Classification Matrix
+AI deployments are categorized into four tiers based on their potential societal harm:
+* **Unacceptable Risk:** Banned applications (e.g., social scoring, real-time biometric surveillance in public spaces by law enforcement).
+* **High Risk:** Critical infrastructure, medical diagnostics, employment/hiring algorithms, and law enforcement tools requiring strict pre-market audits.
+* **Limited Risk:** Chatbots and generative media requiring mandatory user notification (watermarking/disclosure).
+* **Minimal/No Risk:** Low-impact tools like AI-enabled video games or spam filters operating with standard safety guidelines.
+
+### 2. Algorithmic Transparency & Explainability (XAI)
+* Mandates technical documentation and data provenance logs for all high-risk models.
+* Requires the implementation of interpretability frameworks (such as SHAP/LIME or mechanistic auditing) to trace high-stakes model decisions.
+
+### 3. Continuous Compliance & Red Teaming
+* Enforces mandatory third-party safety evaluations ("red teaming") before releasing powerful open-weights or scaling cloud APIs.
+* Establishes continuous post-deployment monitoring for drift, bias amplification, and emergent vulnerabilities.
+
+---
+
+## 📁 Repository Structure
+
+```text
+├── frameworks/
+│   ├── risk_classification.md   # Tiered evaluation guidelines
+│   ├── transparency_standards.md # Explainable AI and audit protocols
+│   └── compliance_checklist.md  # Step-by-step deployment validation
+├── market/
+│   └── tam_sam_som.md           # Market sizing, definitions, and commercial analysis
+├── policies/
+│   ├── data_governance.yaml     # Dataset auditing and privacy controls
+│   └── incident_response.md     # Vulnerability and hallucination reporting
+└── README.md                    # Framework overview and documentation
